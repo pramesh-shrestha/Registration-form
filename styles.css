@@ -1,0 +1,122 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  color: #f5f6f7;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+
+/* label is inline element so set it to block element to put it one on multiple lines */
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+h1,
+p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+/* Center the form element, by giving it a margin of 0 auto. Then, fix its size to a maximum width of 500px, and a minimum width of 300px. In between that range, allow it to have a width of 60vw. */
+form {
+  margin: auto;
+  max-width: 500px;
+  min-width: 300px;
+  width: 60vw;
+  padding-bottom: 2em;
+}
+
+fieldset {
+  margin: 2rem 0;
+  border: none;
+  border-bottom: 3px solid #3b3b4f;
+}
+
+legend {
+  background-color: white;
+  color: black;
+}
+/* 
+The border of the last fieldset element looks a little out of place. You can select the last element of a specific type using the last-of-type CSS pseudo-class, like this:
+
+p:last-of-type { }
+
+That will select the last p element. Create a new selector that targets the last fieldset element and set its border-bottom to none. */
+fieldset:last-of-type {
+  border-bottom: none;
+}
+
+/* It would be nicer to have the label text appear above the form elements.
+
+Select all input, textarea, and select elements, and make them take up the full width of their parent elements.
+
+Also, add 10px of margin to the top of the selected elements. Set the other margins to 0. */
+input,
+textarea,
+select {
+  width: 100%;
+  margin: 10px 0 0 0;
+  min-height: 2em;
+}
+
+/* Select only the .inline elements, and give them width of unset. This will remove the earlier rule which set all the input elements to width: 100%.*/
+.inline {
+  width: unset;
+  margin-right: 0.5em;
+
+  /* If you look close enough, you will notice the .inline elements(radio buttons and checkbox) are too high on the line.
+
+To combat this, set the vertical-align property to text-bottom. */
+  vertical-align: text-bottom;
+}
+
+input,
+textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+/* To style the submit button, you can use an attribute selector, which selects an element based on the given attribute value. Here is an example:
+
+input[name="password"]
+The above selects input elements with a name attribute value of password.
+
+Now, use the attribute selector to style the submit button with a display of block, and a width of 60%. */
+input[type="submit"] {
+  display: block;
+  /* Take 60% of the width:  */
+  width: 60%;
+  min-width: 300px;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white;
+}
+
+/* With a display of block the submit button sits flush against the left edge of its parent.
+
+Use the same technique used to center the form to center the submit button. */
+input[type="submit"] {
+  margin: 1em auto;
+}
+
+/* hovering submit button */
+input[type="submit"]:hover {
+  background-color: aliceblue;
+  color: #0a0a23;
+  cursor: pointer;
+}
+
+/* Using another attribute selector, style the input with a type of file to be the same padding as the other input elements. */
+input[type="file"] {
+  padding: 1px 2px;
+}
+
+/* Last, but not least, change the text color of the terms and conditions link to #dfdfe2. */
+a {
+  color: #dfdfe2;
+}
